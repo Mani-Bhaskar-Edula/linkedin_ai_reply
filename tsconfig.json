@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                                  // Set the target to the latest version
+    "module": "ESNext",                                  // Use ESNext module syntax for modern JS
+    "jsx": "react-jsx",                                  // Use the new JSX transform for React
+    "strict": true,                                      // Enable all strict type-checking options
+    "esModuleInterop": true,                             // Enable interop for CommonJS modules
+    "skipLibCheck": true,                                // Skip type checking for all .d.ts files
+    "forceConsistentCasingInFileNames": true,           // Ensure consistent casing in imports
+    "moduleResolution": "node",                           // Use Node module resolution strategy
+    "resolveJsonModule": true,                           // Enable importing .json files
+    "isolatedModules": true,                              // Ensure each file can be transpiled independently
+    "rootDir": "./",                                      // Set the root directory for your source files
+    "outDir": "./dist",                                  // Specify the output folder for compiled files
+    "baseUrl": "./",                                     // Base directory to resolve non-relative module names
+  },
+  "include": ["src/**/*","entrypoints/**/*"],           // Include all files in the entrypoints folder
+  "exclude": ["node_modules"]                           // Exclude node_modules
+}
