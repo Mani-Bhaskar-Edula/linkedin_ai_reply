@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 
 interface AiIconProps {
     onClick: () => void;
+    visible: boolean;
 }
 
-const AiIcon: React.FC<AiIconProps> = ({ onClick }) => {
+const AiIcon: React.FC<AiIconProps> = ({ onClick, visible }) => {
     const iconRef = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
@@ -12,9 +13,9 @@ const AiIcon: React.FC<AiIconProps> = ({ onClick }) => {
             iconRef.current.style.position = 'absolute';
             iconRef.current.style.bottom = '10px';
             iconRef.current.style.right = '10px';
-            iconRef.current.style.display = 'none';
+            iconRef.current.style.display = visible ? 'block' : 'none';
         }
-    }, []);
+    }, [visible]);
 
     return (
         <img
@@ -23,7 +24,6 @@ const AiIcon: React.FC<AiIconProps> = ({ onClick }) => {
             alt="AI Icon"
             className="ai-icon"
             onClick={onClick}
-            style={{ cursor: 'pointer' }}
         />
     );
 };
