@@ -1,10 +1,11 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+
 export default defineContentScript({
-    matches: ['*://google.com/*'],
+    matches: ['*://google.com/*', '*://www.linkedin.com/*'],
     cssInjectionMode: 'manual',
-  
-    main(ctx: ContentScriptContext) {
-      console.log('Content script is running on Google!');
-      
+
+    main() {
+        
     },
-  });
-  
+});
