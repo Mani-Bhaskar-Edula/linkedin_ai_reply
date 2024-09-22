@@ -14,6 +14,6 @@
     "outDir": "./dist",                                  // Specify the output folder for compiled files
     "baseUrl": "./",                                     // Base directory to resolve non-relative module names
   },
-  "include": ["src/**/*","entrypoints/**/*"],           // Include all files in the entrypoints folder
+  "include": ["entrypoints/**/*"],           // Include all files in the entrypoints folder
   "exclude": ["node_modules"]                           // Exclude node_modules
 }

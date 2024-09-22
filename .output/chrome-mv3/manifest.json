@@ -3,6 +3,37 @@
   "name": "linkedin_ai_reply",
   "description": "A Chrome Extension that runs on LinkedIn and assists users in generating replies to messages.",
   "version": "1.0.0",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://www.linkedin.com/*",
+    "*://*.google.com/*",
+    "*://google.com/*",
+    "http://localhost/*"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "/icon16.png",
+      "32": "/icon32.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "*://*.google.com/*",
+        "*://www.linkedin.com/*"
+      ],
+      "resources": [
+        "icon/*.png"
+      ]
+    }
+  ],
   "commands": {
     "wxt:reload-extension": {
       "description": "Reload the extension during development",
@@ -11,19 +42,8 @@
       }
     }
   },
-  "background": {
-    "service_worker": "background.js"
-  },
-  "host_permissions": [
-    "*://google.com/*",
-    "http://localhost/*"
-  ],
   "content_security_policy": {
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval' http://localhost:3000; object-src 'self';",
     "sandbox": "script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:3000; sandbox allow-scripts allow-forms allow-popups allow-modals; child-src 'self';"
-  },
-  "permissions": [
-    "tabs",
-    "scripting"
-  ]
+  }
 }
